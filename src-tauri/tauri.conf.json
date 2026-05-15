@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "WhatsApp",
+  "version": "0.1.0",
+  "identifier": "com.whatsapp.tauri",
+
+  "build": {
+    "frontendDist": ".."
+  },
+
+  "app": {
+    "windows": [],
+
+    "security": {
+      "csp": null,
+      "dangerousDisableAssetCspModification": false,
+      "freezePrototype": true,
+      "devtools": false
+    }
+  },
+
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      }
+    }
+  }
+}
