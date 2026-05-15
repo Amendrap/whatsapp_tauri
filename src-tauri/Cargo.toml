@@ -1,0 +1,26 @@
+[package]
+name = "whatsapp-tauri"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "whatsapp_tauri_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# ---------------------------------------------------------------------------
+# Release-profile optimisations: small binary, fast startup, low memory use
+# ---------------------------------------------------------------------------
+[profile.release]
+codegen-units = 1   # enables full cross-crate inlining
+lto = true          # link-time optimisation removes dead code
+opt-level = "s"     # optimise for binary size (choose "z" to go even smaller)
+panic = "abort"     # removes panic-unwinding machinery
+strip = true        # strip debug symbols from the final binary
