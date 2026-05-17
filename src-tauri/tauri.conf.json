@@ -15,7 +15,6 @@
       "csp": null,
       "dangerousDisableAssetCspModification": false,
       "freezePrototype": true,
-      "devtools": false
     }
   },
 
